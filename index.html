@@ -1,58 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-/>
-    <link rel="stylesheet" href="style.css">
-    
-</head>
-<body>
-  <div class="wrapper">
-    <header class="header">
-      <h1 class="main-header">Ремонт техники различных брендов</h1>
-    </header>
-    <main class="main">
-        <section class="main-section">
-            <article class="main-slider">
-              <div class="swiper">
-                <!-- Additional required wrapper -->
-                <div class="swiper-wrapper">
-                  <!-- Slides -->
-                  <div class="swiper-slide"><img class="swiper-slide__image"src="assets/logo/acer.svg"><button class="swiper-button"></button></div>
-                  <div class="swiper-slide"><img class="swiper-slide__image"src="assets/logo/Bitmap.svg"><button class="swiper-button"></button></div>
-                  <div class="swiper-slide"><img class="swiper-slide__image"src="assets/logo/Bitmap1.svg"><button class="swiper-button"></button></div>
-                  <div class="swiper-slide"><img class="swiper-slide__image"src="assets/logo/Bitmap2.svg"><button class="swiper-button"></button></div>
-                  <div class="swiper-slide"><img class="swiper-slide__image"src="assets/logo/Bitmap3.svg"><button class="swiper-button"></button></div>
-                  <div class="swiper-slide"><img class="swiper-slide__image"src="assets/logo/Bitmap4.svg"><button class="swiper-button"></button></div>
-                  <div class="swiper-slide"><img class="swiper-slide__image"src="assets/logo/Bitmap1.svg"><button class="swiper-button"></button></div>
-                  <div class="swiper-slide"><img class="swiper-slide__image"src="assets/logo/Bitmap2.svg"><button class="swiper-button"></button></div>
-                  <div class="swiper-slide"><img class="swiper-slide__image"src="assets/logo/Bitmap2.svg"><button class="swiper-button"></button></div>
-                  <div class="swiper-slide"><img class="swiper-slide__image"src="assets/logo/Bitmap3.svg"><button class="swiper-button"></button></div>
-                  
-                  
-                </div>
-                <!-- If we need pagination -->
-                <div class="swiper-pagination"></div>
-              
-                <!-- <div class="brand-list">
-                  <div class="brand-list__item"><img class="brand-list_image"src="assets/logo/acer.svg"><button class="go-button"></button></div>
-                  <div class="brand-list__item"><img class="brand-list_image"src="assets/logo/Bitmap.svg.svg"><button class="go-button"></button></div>
-                  <div class="brand-list__item"><img class="brand-list_image"src="assets/logo/Bitmap1.svg"><button class="go-button"></button></div>
-                  <div class="brand-list__item"><img class="brand-list_image"src="assets/logo/Bitmap2.svg"><button class="go-button"></button></div>
-                  <div class="brand-list__item"><img class="brand-list_image"src="assets/logo/Bitmap4.svg"><button class="go-button"></button></div>
-                  <div class="brand-list__item"><img class="brand-list_image"src="assets/logo/Bitmap3.svg"><button class="go-button"></button></div>
-                </div> -->
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <h1 class="main-header">Ремонт техники различных брендов</h1>
+      </header>
+      <main class="main">
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="card">
+                <img src="assets/png/acer.png" alt="acer" />
+                <button class="card-button"></button>
               </div>
-            </article>
-        </section>
-    </main>
-  </div>
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  <script src="script.js"></script>
-    </body>
+            </div>
+            <div class="swiper-slide">
+              <div class="card">
+                <img src="assets/png/sony.png" alt="sony" />
+                <button class="card-button"></button>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="card">
+                <img src="assets/png/bosch.png" alt="bosch" />
+                <button class="card-button"></button>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="card">
+                <img src="assets/png/samsung.png" alt="samsung" />
+                <button class="card-button"></button>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="card">
+                <img src="assets/png/bosch.png" alt="bosch" />
+                <button class="card-button"></button>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="card">
+                <img src="assets/png/lenovo.png" alt="lenovo" />
+                <button class="card-button"></button>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="card">
+                <img src="assets/png/acer.png" alt="acer" />
+                <button class="card-button"></button>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="card">
+                <img src="assets/png/lenovo.png" alt="lenovo" />
+                <button class="card-button"></button>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="card">
+                <img src="assets/png/samsung.png" alt="samsung" />
+                <button class="card-button"></button>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </main>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
+  </body>
 </html>

@@ -1,18 +1,14 @@
-
 @font-face {
-  font-family: 'TT Lakes';
-  src: url('assets/fonts/medium/TTLakes-Medium.woff2') format('woff2'),
-       url('assets/fonts/medium/TTLakes-Medium.woff') format('woff');
-      
-  
+  font-family: "TT Lakes";
+  src: url("assets/fonts/medium/TTLakes-Medium.woff2") format("woff2"),
+    url("assets/fonts/medium/TTLakes-Medium.woff") format("woff");
 }
 
 @font-face {
-  font-family: 'TT Lakes Bold';
-  src: url('assets/fonts/bold/TTLakes-ExtraBold.woff2') format('woff2'),
-      url('assets/fonts/bold/TTLakes-ExtraBold.woff') format('woff');
+  font-family: "TT Lakes Bold";
+  src: url("assets/fonts/bold/TTLakes-ExtraBold.woff2") format("woff2"),
+    url("assets/fonts/bold/TTLakes-ExtraBold.woff") format("woff");
 }
-
 
 *,
 *::before,
@@ -21,14 +17,17 @@
   margin: 0;
   border: 0;
   box-sizing: border-box;
-  font-family: 'TT Lakes';
+  font-family: "TT Lakes";
   font-size: 16px;
 }
-
+html,
+body {
+  position: relative;
+  height: 100%;
+}
 a {
   text-decoration: none;
-  color:#1B1C21;
-
+  color: #1b1c21;
 }
 
 ul,
@@ -41,146 +40,115 @@ html,
 body {
   min-width: 320px;
   height: fit-content;
-  color: #1B1C21;
-  font-family: 'TT Lakes', sans-serif;
+  color: #1b1c21;
+  font-family: "TT Lakes", sans-serif;
   font-size: 14px;
   line-height: 20px;
   letter-spacing: 0.2px;
   text-align: left;
   overflow-x: hidden;
 }
-.wrapper{
+.wrapper {
   min-width: 320px;
   margin: auto;
-  background-color: #474747;
 }
-button{
+button {
   background: none;
   border: none;
   padding: 0;
   cursor: pointer;
 }
-/*----------------------header style-----------------*/
 
-.header{
+/*-----------------------------------*/
+
+.header {
   display: flex;
   justify-content: center;
   height: 80px;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
 }
-.main-header{
+.main-header {
   width: 288px;
   height: 48px;
   top: 16px;
   left: 16px;
   margin: auto 0;
-  color:#7E7E82;
-  font-family:'TT Lakes';
+  color: #7e7e82;
+  font-family: "TT Lakes";
   font-size: 16px;
 
   font-weight: 10;
   line-height: 24px;
   text-transform: uppercase;
-
 }
-.main-slider{
+main {
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+.swiper {
+  width: 100%;
+  height: 200px;
+  background-color: #f9f9f9;
+}
+.swiper-slide {
+  width: 240px !important;
+  height: 80px;
+  text-align: center;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3em;
+}
+.card {
+  width: 250px !important;
+  height: 92px;
   display: flex;
   align-items: center;
-  height: 200px;
-  background-image: linear-gradient(#F8F8F8 100%, #FFFFFF 100%);
+  justify-content: space-between;
+  border: 1px solid #eaeaea;
+  border-radius: 6%;
+  padding: 10px;
 }
 
-
-
-
-
-/*-----------------slider------------------------*/
-.swiper{
-  display: flex;
-  max-width: 800px;
-  width: 100%;
-  height: 120px;
-  margin: 0 auto;
-  
-  border-radius: 6px;
-}
-.swiper-wrapper{
-box-sizing: content-box;
-}
-.swiper-slide{
-  display: flex;
-  
-width: 240px !important;
-height: 72px;
-background-color: #ffffff;
-border: 1px solid #EAEAEA;
-border-radius: 6%;
-
+.card img {
+  height: 34px;
+  width: auto;
 }
 
-
-/* .swiper-slide__img{
-  width: 10%;
-  height: auto;
-} */
-.swiper-slide__image{
-  width: 108px;
-  height: 32;
-  margin-left: 10px;
-  
-}
-.swiper-button{
+.card-button {
   width: 40px;
   height: 40px;
-  margin: 15px 0 0 60px;
   background: url(assets/logo/go.svg) no-repeat;
-  
 }
-.swiper-pagination{
-  
+.card-button {
+  border-radius: 50%;
+  transition: transform 0.5s;
 }
-.swiper-pagination-bullet{
-  background-color: transparent;
-  width: 15px;
-  height: 15px;
+.card-button:hover {
+  transform: scale(1.09);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  transition: box-shadow 0.5s transform 0.5s;
+}
+.card-button:active {
+  transform: scale(0.95);
+  filter: brightness(90%);
+}
+.swiper-pagination-bullet {
+  width: 22px;
+  height: 22px;
+  margin: 0 8px;
+  background-color: #dddddd;
+  opacity: 0.8;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #b5b6bc;
   opacity: 1;
-  
-  background-color: #DDDDDD;
-
 }
-
-.swiper-pagination-bullet-active{
-  background-color: #B5B6BC;
-}
-.footer-button{
-  width: 40px;
-  height: 40px;
-  max-width: 100%;
-  background-size: contain;
-  cursor: pointer;
-  background-color: #FFFFFF;
-}
-.header-menu .header-menu__item:first-child{
-  background-image: url(assets/logo/mobile/ic/burgerclose.png);
-  background-color: #FFFFFF;
-}
-
-/* .swiper-pagination {
-  position: absolute;
-  left: 50%;
-  transform: translateY(20px);
-  z-index: 10; 
-}
-
-.swiper {
-  position: relative;
-  overflow-y: visible !important; } */
-
-/*---------media------------------*/
 @media (min-width: 768px) {
-  
 }
 
 @media (min-width: 1120px) {
-  
 }
