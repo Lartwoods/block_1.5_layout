@@ -9,53 +9,41 @@ let swiper = new Swiper(".mySwiper", {
 });
 
 
-
-
-document.addEventListener('DOMContentLoaded', function () {
-
   let cards = Array.from(document.querySelectorAll('.brand-card'));
   let button = document.querySelector('.brand-list__button');
-  let initialVisibleCount = 6; 
-  let isAllCardsVisible = false;
+  let visibleCount = 6; 
+  let isCardsVisible = false;
 
-  button.addEventListener('click', ()=>{
-    if( button.classList.contains('button-show')){
-     button.classList.add('button-hide');
-     button.classList.remove('button-show')
-     button.textContent = 'Скрыть'
-    } else{
-     button.classList.add('button-show');
-     button.classList.remove('button-hide');
-     button.textContent = 'Показать ещё'
-    };
-     
-   })
 
   button.addEventListener('click', () => {
-    isAllCardsVisible = !isAllCardsVisible;
-    updateCardVisibility();
+    isCardsVisible = !isCardsVisible;
+    changeVisibility();
   });
 
-  function updateCardVisibility() {
+  function changeVisibility() {
     if (window.innerWidth < 768) {
       cards.forEach(card => card.classList.add('hidden'));
       button.classList.add('hidden');
       return;
     }
     cards.forEach((card, index) => {
-      if (isAllCardsVisible || index < initialVisibleCount) {
+      if (isCardsVisible || index < visibleCount) {
         card.classList.remove('hidden');
       } else {
         card.classList.add('hidden');
       }
     });
 
-    if (isAllCardsVisible) {
-      button.textContent = 'Скрыть';
+    if (isCardsVisible) {
+      button.classList.add('button-hide');
+      button.classList.remove('button-show')
+      button.textContent = 'Скрыть'
     } else {
-      button.textContent = 'Показать ещё';
+      button.classList.add('button-show');
+     button.classList.remove('button-hide');
+     button.textContent = 'Показать ещё'
     }
-    button.classList.toggle('hidden', !isAllCardsVisible && cards.length <= initialVisibleCount);
+    button.classList.toggle('hidden', !isCardsVisible && cards.length <= visibleCount);
   
   }
 
@@ -70,11 +58,11 @@ document.addEventListener('DOMContentLoaded', function () {
       visible = 0;
     }
 
-    initialVisibleCount = visible;
-    updateCardVisibility();
+    visibleCount = visible;
+    changeVisibility();
   }
 
   window.addEventListener('resize', handleResize);
 
   handleResize();
-});
+
