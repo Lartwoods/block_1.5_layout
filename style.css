@@ -58,7 +58,9 @@ button {
   padding: 0;
   cursor: pointer;
 }
-
+.hidden{
+  display: none !important;
+}
 /*-----------------------------------*/
 
 .header {
@@ -67,11 +69,9 @@ button {
   height: 80px;
   background-color: #ffffff;
 }
-.main-header {
+.header-text {
   width: 288px;
   height: 48px;
-  top: 16px;
-  left: 16px;
   margin: auto 0;
   color: #7e7e82;
   font-family: "TT Lakes";
@@ -82,41 +82,46 @@ button {
   text-transform: uppercase;
 }
 main {
-  position: relative;
+  height: fit-content;
   margin: 0;
-  padding: 0;
+  padding: 20px;
+  background-color: #f9f9f9;
 }
 .swiper {
   width: 100%;
-  height: 200px;
+  height: 180px;
   background-color: #f9f9f9;
 }
-.swiper-slide {
-  width: 240px !important;
-  height: 80px;
-  text-align: center;
-  background: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 3em;
-}
-.card {
+.swiper-slide,
+
+.card,
+.brand-card {
   width: 250px !important;
   height: 92px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border: 1px solid #eaeaea;
-  border-radius: 6%;
+  background-color: white;
+  border-top: 1px solid #eaeaea;
+  border-bottom: 1px solid #eaeaea;
+  border-radius: 6px;
   padding: 10px;
+  margin: 1%;
+}
+.swiper-slide{
+  border: 1px solid #eaeaea;
+  border-radius: 6px;
 }
 
-.card img {
+.card img,
+.brand-card img {
   height: 34px;
   width: auto;
 }
-
+.brand-card .round,
+.card .round{
+  height: 50px;
+}
 .card-button {
   width: 40px;
   height: 40px;
@@ -131,6 +136,7 @@ main {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   transition: box-shadow 0.5s transform 0.5s;
 }
+
 .card-button:active {
   transform: scale(0.95);
   filter: brightness(90%);
@@ -147,8 +153,78 @@ main {
   background-color: #b5b6bc;
   opacity: 1;
 }
+
+
+.button-show{
+  display: none;
+}
 @media (min-width: 768px) {
+  .header-text{
+    width: 100%;
+    height: fit-content;
+    margin-left: 4%;
+  }
+  .swiper{
+    display: none;
+  }
+  .card,
+  .brand-card{
+    width: 31% !important;
+    border: 1px solid #eaeaea;
+    border-radius: 6px;
+  }
+  
+  .brand-list{
+    display: flex;
+    justify-content: start;
+
+    flex-wrap: wrap;
+    
+  }
+  .button-show,
+  .button-hide{
+    position: relative;
+    display: block;
+    width: auto;
+    margin: 5% 0 2% 10% ;
+    transition: color 0.3s;
+  }
+  .button-show:before,
+  .button-hide:before{
+    position:absolute;
+    content:"";
+    background:url(assets/png/hide.png) no-repeat center center;
+    background-size: cover;
+    width: 25px;
+    height: 25px;
+    top: -10%;
+    left: -35%;
+    transform:  rotate(180deg);
+  }
+
+  .button-show:hover,
+  .button-hide:hover{
+    color: #b5b6bc;
+    transition: color 0.3s opacity 0.3s;
+  }
+  
+  .button-hide:before{
+  transform: rotate(0);
+left: -65%;
+transition: opacity 0.3s;
+
+}
+.button-hide:hover:before,
+.button-show:hover:before{
+  opacity: 50%;
 }
 
-@media (min-width: 1120px) {
 }
+@media (min-width: 1120px) {
+  
+  .brand-card{
+    width: 23% !important;
+  }
+ 
+}
+
