@@ -123,9 +123,23 @@ main {
   height: 50px;
 }
 .card-button {
+  position: relative;
   width: 40px;
   height: 40px;
-  background: url(assets/logo/go.svg) no-repeat;
+  border: 2px solid #FF3E79;
+  border-radius: 50%;
+}
+.card-button::before {
+  content: '';
+  position: absolute;
+  top: 39%;
+  left: 35%;
+  width: 9px;
+  height: 9px;
+  border-top: 2.9px solid #FF3E79;
+  border-right: 2.9px solid #FF3E79;
+  border-radius: 2px 2px 2px 2px ;
+  transform:  rotate(45deg);
 }
 .card-button {
   border-radius: 50%;
